@@ -1,5 +1,5 @@
-/* .hero {
-  padding-left: 0%;
+ .hero {
+  /*padding-left: 0%;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: #ffffff;
   min-height: 100vh;
@@ -7,10 +7,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem 3rem;
+  padding: 2rem 3rem;*/
   position: relative;
   overflow: hidden;
-} */
+} 
 
 .hero::before {
   content: '';

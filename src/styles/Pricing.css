@@ -1,11 +1,11 @@
-/* .pricing {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+ .pricing {
+/*  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: #ffffff;
   padding: 4rem 3rem;
-  text-align: center;
+  text-align: center;*/
   position: relative;
   overflow: hidden;
-} */
+}
 
 .pricing::before {
   content: '';
