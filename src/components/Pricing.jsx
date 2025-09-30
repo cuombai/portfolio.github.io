@@ -10,7 +10,7 @@ const Pricing = () => {
           Choose the perfect plan to bring your vision to life with our expert web development services.
         </p>
         <div className="pricing-cards">
-          <div className="pricing-card">
+          <div className="pricing-card" data-aos-delay="100">
             <h3 className="card-title">Basic</h3>
             <p className="card-price">$499<span>/one-time</span></p>
             <ul className="card-features">
@@ -21,7 +21,7 @@ const Pricing = () => {
             </ul>
             <a href="/#contact" className="card-cta">Choose Plan</a>
           </div>
-          <div className="pricing-card featured">
+          <div className="pricing-card featured" data-aos-delay="300">
             <h3 className="card-title">Pro</h3>
             <p className="card-price">$999<span>/one-time</span></p>
             <ul className="card-features">
@@ -33,7 +33,7 @@ const Pricing = () => {
             </ul>
             <a href="/#contact" className="card-cta">Choose Plan</a>
           </div>
-          <div className="pricing-card">
+          <div className="pricing-card" data-aos-delay="500">
             <h3 className="card-title">Enterprise</h3>
             <p className="card-price">Custom<span>/quote</span></p>
             <ul className="card-features">
