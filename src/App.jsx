@@ -1,8 +1,10 @@
-import './App.css';
+// import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Pricing from './components/Pricing';
+import MissionVision from './components/MissionVision';
+
 
 // Blur text
 
@@ -18,16 +20,15 @@ function App() {
   return (
     <>
       <Navbar />
-      <main>
-        <section>
           <Hero/>
-        </section>
+          <div style={{ position: 'relative', zIndex: 1200 }}>
+  <MissionVision />
+</div>
 
-        <section>
+
           <Pricing/>
-        </section>
-      </main>
       <Footer />
+
     </>
   );
 }

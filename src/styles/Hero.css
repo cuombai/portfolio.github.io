@@ -1,16 +1,20 @@
- .hero {
-  /*padding-left: 0%;
+.hero {
+  position: absolute; /* Use absolute to sit below fixed navbar */
+  top: 80px; /* Match navbar height */
+  left: 0;
+  right: 0;
+  height: 40vh; /* 40% of viewport height */
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: #ffffff;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem 3rem;*/
-  position: relative;
+  padding: 0 1rem;
   overflow: hidden;
-} 
+  z-index: 1099; /* Ensure it's above background but below navbar */
+}
+
 
 .hero::before {
   content: '';
@@ -81,23 +85,12 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 2rem 1.5rem;
-    min-height: 80vh;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .hero-cta {
-    font-size: 1rem;
-    padding: 0.7rem 1.5rem;
+    top: 70px; /* Match mobile navbar height */
+    height: 30vh;
+    padding: 0 1.5rem;
   }
 }
+
 
 @media (max-width: 480px) {
   .hero-title {

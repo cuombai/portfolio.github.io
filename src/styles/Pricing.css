@@ -1,11 +1,16 @@
- .pricing {
-/*  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+.pricing {
+  position: absolute;
+  top: calc(80px + 40vh); /* Below navbar + hero */
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: #ffffff;
   padding: 4rem 3rem;
-  text-align: center;*/
-  position: relative;
+  text-align: center;
   overflow: hidden;
+  z-index: 1098; /* Just below hero */
 }
+
 
 .pricing::before {
   content: '';

@@ -1,27 +1,33 @@
-import React from 'react';
+import { useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-logo">
-          <span className="logo">Godtek AI</span>
-          <span className="logo-subtext">Web Solutions</span>
-        </div>
-        <div className="footer-links">
-          <HashLink to="/#home" className="footer-link">Home</HashLink>
-          <HashLink to="/#services" className="footer-link">Services</HashLink>
-          <HashLink to="/#clients" className="footer-link">Clients</HashLink>
-          <HashLink to="/#contact" className="footer-link">Contact</HashLink>
-        </div>
-        <div className="social-links">
-          <a href="https://twitter.com" className="social-link">Twitter</a>
-          <a href="https://linkedin.com" className="social-link">LinkedIn</a>
-        </div>
+      <div className="logo-container">
+        <span className="logo">Godtek AI</span>
+        <span className="logo-subtext">Web Solutions</span>
       </div>
-      <p className="footer-copyright">&copy; 2025 Godtek AI. All rights reserved.</p>
+      <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
+        <span className={`hamburger-line ${isOpen ? 'open' : ''}`}></span>
+        <span className={`hamburger-line ${isOpen ? 'open' : ''}`}></span>
+        <span className={`hamburger-line ${isOpen ? 'open' : ''}`}></span>
+      </button>
+      <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+        <li><HashLink to="/#home" className="nav-link" onClick={() => setIsOpen(false)}>Home</HashLink></li>
+        <li><HashLink to="/#services" className="nav-link" onClick={() => setIsOpen(false)}>Services</HashLink></li>
+        <li><HashLink to="/#clients" className="nav-link" onClick={() => setIsOpen(false)}>Clients</HashLink></li>
+        <li><HashLink to="/#contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</HashLink></li>
+        <li><Link to="/login" className="nav-link login-btn" onClick={() => setIsOpen(false)}>Login</Link></li>
+      </ul>
     </footer>
   );
 };
