@@ -1,34 +1,92 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react';
+import '../styles/ContactForm.css';
 
 const ContactForm = () => {
-  const { register, handleSubmit, reset } = useForm();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+  });
 
-  const onSubmit = (data) => {
-    emailjs.send(
-      'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-      'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-      data,
-      'YOUR_USER_ID' // Replace with your EmailJS user ID
-    )
-    .then(() => {
-      alert('Message sent successfully!');
-      reset();
-    })
-    .catch((error) => {
-      alert('Failed to send message: ' + error.text);
-    });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const name = e.target.name.value;
+  const email = e.target.email.value;
+  const phone = e.target.phone.value;
+  const service = e.target.service.value;
+
+  const message = `Hello Curtis, I'm ${name}. My email is ${email} and phone is ${phone}. I'd like to get in touch via Godtek AI in regards to ${service}.`;
+
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappURL = `https://wa.me/254746881441?text=${encodedMessage}`;
+
+  window.open(whatsappURL, '_blank');
+};
+
+
   return (
-    <section className="section contact-form">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register('name', { required: true })} placeholder="Your Name" />
-        <input {...register('email', { required: true })} placeholder="Your Email" type="email" />
-        <textarea {...register('message', { required: true })} placeholder="Your Message" />
-        <button type="submit">Send</button>
+    <section className="contact-section">
+      <h2 className="contact-heading">Get in Touch</h2>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <label>
+          Name
+          <input
+            type="text"
+            name="name"
+            placeholder="Your full name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </label>
+
+        <label>
+          Email
+          <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </label>
+
+        <label>
+          Phone Number
+          <input
+            type="tel"
+            name="phone"
+            placeholder="+254..."
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+        </label>
+
+        <label>
+          Choose Your Service
+          <select
+            name="service"
+            value={formData.service}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select a service</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="web-development">Web Development</option>
+            <option value="software-development">Software Development</option>
+          </select>
+        </label>
+
+        <button type="submit" className="submit-btn">Submit</button>
       </form>
     </section>
   );

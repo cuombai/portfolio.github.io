@@ -1,0 +1,163 @@
+.about-section {
+  padding: 4rem 2rem;
+  background: #ffffff;
+  color: #000000;
+  text-align: center;
+}
+
+.about-heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.about-card {
+  position: relative;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+position: relatve;
+  transform: scale(1.08);
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  color: #000000;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+
+.about-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-overlay h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #f39c12;
+}
+
+.card-overlay p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: #ffffff;
+  color: #000000;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.modal-content h3 {
+  color: #f39c12;
+  margin-top: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .about-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-heading {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-card {
+    height: 280px;
+    border-radius: 10px;
+  }
+
+  .card-overlay {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .card-overlay h3 {
+    font-size: 1rem;
+  }
+
+  .card-overlay p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .modal-content {
+    max-width: 90%;
+    padding: 1.5rem;
+    max-height: 85vh;
+  }
+
+  .modal-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .modal-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}

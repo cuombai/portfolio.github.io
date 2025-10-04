@@ -1,19 +1,18 @@
 .hero {
-  position: absolute; /* Use absolute to sit below fixed navbar */
-  top: 80px; /* Match navbar height */
-  left: 0;
-  right: 0;
-  height: 40vh; /* 40% of viewport height */
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  color: #ffffff;
+  position: relative; /* Changed from absolute */
+  top: 0; /* Remove offset */
+  height: 50vh;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 0 1rem;
   overflow: hidden;
-  z-index: 1099; /* Ensure it's above background but below navbar */
+  z-index: 1; /* Lower z-index to avoid overlapping */
 }
+
 
 
 .hero::before {
@@ -36,7 +35,7 @@
   font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: 1.5px;
-  background: linear-gradient(90deg, #f39c12, #e67e22);
+  background: linear-gradient(90deg, #1237f3, #e67e22);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1.5rem;
@@ -47,7 +46,7 @@
 
 .hero-subtitle {
   font-size: 1.3rem;
-  color: #b0b0b0;
+  color: #000000;
   font-weight: 300;
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -83,21 +82,50 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   .hero {
-    top: 70px; /* Match mobile navbar height */
-    height: 30vh;
-    padding: 0 1.5rem;
+    top: 70px;
+    height: auto;
+    min-height: 40vh;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    text-align: center;
   }
-}
 
-
-@media (max-width: 480px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-cta {
     font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .hero-cta {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
   }
 }

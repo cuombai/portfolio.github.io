@@ -6,9 +6,9 @@ import '../styles/Navbar.css';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleMenu = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   return (
     <nav className="navbar">
@@ -16,10 +16,10 @@ const Navbar = () => {
         <span className="logo">Godtek AI</span>
         <span className="logo-subtext">Web Solutions</span>
       </div>
-      <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
-        <span className={`hamburger-line ${isOpen ? 'open' : ''}`}></span>
-        <span className={`hamburger-line ${isOpen ? 'open' : ''}`}></span>
-        <span className={`hamburger-line ${isOpen ? 'open' : ''}`}></span>
+      <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+        <div className={`hamburger-line ${isOpen ? 'open' : ''}`}></div>
+        <div className={`hamburger-line ${isOpen ? 'open' : ''}`}></div>
+        <div className={`hamburger-line ${isOpen ? 'open' : ''}`}></div>
       </button>
       <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
         <li><HashLink to="/#home" className="nav-link" onClick={() => setIsOpen(false)}>Home</HashLink></li>
