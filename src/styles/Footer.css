@@ -116,4 +116,12 @@
     text-align: center;
     width: 100%;
   }
+
+  .footer.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+  
 }
