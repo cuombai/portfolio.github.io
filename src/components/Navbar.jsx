@@ -22,11 +22,11 @@ const Navbar = () => {
         <div className={`hamburger-line ${isOpen ? 'open' : ''}`}></div>
       </button>
       <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
-        <li><HashLink to="/#home" className="nav-link" onClick={() => setIsOpen(false)}>Home</HashLink></li>
-        <li><HashLink to="/#services" className="nav-link" onClick={() => setIsOpen(false)}>Services</HashLink></li>
-        <li><HashLink to="/#clients" className="nav-link" onClick={() => setIsOpen(false)}>Clients</HashLink></li>
-        <li><HashLink to="/#contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</HashLink></li>
-        <li><Link to="/login" className="nav-link login-btn" onClick={() => setIsOpen(false)}>Login</Link></li>
+        <li><HashLink to="/portfolio.github.io/#home" className="nav-link" onClick={() => setIsOpen(false)}>Home</HashLink></li>
+        <li><HashLink to="portfolio.github.io//#services" className="nav-link" onClick={() => setIsOpen(false)}>Services</HashLink></li>
+        <li><HashLink to="portfolio.github.io//#clients" className="nav-link" onClick={() => setIsOpen(false)}>Clients</HashLink></li>
+        <li><HashLink to="portfolio.github.io//#contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</HashLink></li>
+        <li><Link to="portfolio.github.io//login" className="nav-link login-btn" onClick={() => setIsOpen(false)}>Login</Link></li>
       </ul>
     </nav>
   );
