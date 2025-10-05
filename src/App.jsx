@@ -10,6 +10,7 @@ import ContactForm from './components/ContactForm';
 import ServicesOffered from './components/ServicesOffered';
 import { Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
+import Live from './components/Live';
 
 function App() {
   useEffect(() => {
@@ -53,6 +54,9 @@ function App() {
                 <Pricing />
                 <section id="services">
                   <ServicesOffered />
+                </section>
+                <section>
+                  <Live/>
                 </section>
                 <section id="clients">
                   <AboutUs />
