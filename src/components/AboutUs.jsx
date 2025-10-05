@@ -80,11 +80,12 @@ const AboutUs = () => {
             style={{ backgroundImage: `url(${card.image})` }}
             onClick={() => handleCardClick(card)}
           >
-            <div className="card-overlay">
+            <div className="card-overlay slide-visible">
               <h3>{card.title}</h3>
               <p>{card.content.slice(0, 120)}...</p>
             </div>
           </div>
+
         ))}
       </div>
 
@@ -97,6 +98,7 @@ const AboutUs = () => {
           </div>
         </div>
       )}
+
     </section>
   );
 };
