@@ -26,6 +26,39 @@
   z-index: 1;
 }
 
+body, #root {
+  position: relative;
+  z-index: 0;
+}
+
+.about-section,
+.testimonials-section,
+.contact-section,
+.footer {
+  position: relative;
+  z-index: 100;
+}
+
+.video-overlay {
+  pointer-events: auto;
+}
+
+.about-section,
+.testimonials-section,
+.contact-section,
+.footer {
+  pointer-events: none;
+}
+
+body.modal-open .about-section,
+body.modal-open .testimonials-section,
+body.modal-open .contact-section,
+body.modal-open .footer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
 /* MissionVision wrapper */
 .mission-wrapper {
   display: flex;
