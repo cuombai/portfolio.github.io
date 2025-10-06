@@ -3,7 +3,7 @@ import '../styles/Pricing.css';
 const pricingPlans = [
   {
     title: 'Basic',
-    price: '$499',
+    price: '$199',
     frequency: 'one-time',
     features: [
       'Custom Website Design',
@@ -15,7 +15,7 @@ const pricingPlans = [
   },
   {
     title: 'Pro',
-    price: '$999',
+    price: '$599',
     frequency: 'one-time',
     features: [
       'Custom Website Design',
