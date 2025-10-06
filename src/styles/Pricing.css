@@ -23,9 +23,47 @@
   color: #010035;
   border-radius: 12px;
   padding: 2rem;
-  width: 300px;
+  width: 400px;
+  transform-style: preserve-3d;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease;
+  perspective: 1000px;
+  position: relative;
+  height: 520px; /* consistent height for both sides */
+  overflow: hidden;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.card-front {
+  background: #ffffff;
+  z-index: 2;
+}
+
+.card-back {
+  background: #fefefe;
+  transform: rotateY(180deg);
+  z-index: 1;
 }
 
 .pricing-card:hover {
@@ -150,5 +188,39 @@
   .plan-button {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 412px) {
+  .pricing-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .pricing-card {
+    height: auto;
+    min-height: 480px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .card-front, .card-back {
+    padding: 1rem;
+  }
+
+  .plan-title {
+    font-size: 1.3rem;
+  }
+
+  .plan-price {
+    font-size: 1.5rem;
+  }
+
+  .plan-features li {
+    font-size: 0.9rem;
+  }
+
+  .plan-button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
   }
 }

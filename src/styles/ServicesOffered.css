@@ -15,8 +15,12 @@
 
 .services-grid {
   display: grid;
+  width: 60%;
+  height: 150%;
+  margin: auto;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 5rem;
+  
 }
 
 .service-card {
