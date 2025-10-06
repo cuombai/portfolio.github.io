@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo-container">
-        <span className="logo">El ha tek</span>
+        <span className="logo">El-ha-tek</span>
         <span className="logo-subtext">Web Solutions</span>
       </div>
       <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>

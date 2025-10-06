@@ -14,7 +14,7 @@ const Footer = () => {
     <footer className="footer hidden">
       <div className="footer-content">
         <div className="footer-column">
-          <span className="logo">El ha tek</span>
+          <span className="logo">El-ha-tek</span>
           <span className="logo-subtext">Web Solutions for Clinics, Schools, and Startups</span>
           <p className="footer-description">
             Building scalable platforms and outreach tools that empower businesses across Kisumu and beyond.
