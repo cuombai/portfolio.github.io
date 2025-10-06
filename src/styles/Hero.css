@@ -1,0 +1,116 @@
+.hero {
+  position: relative; /* Changed from absolute */
+  top: 0; /* Remove offset */
+  height: 50vh;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+  overflow: hidden;
+  z-index: 1; /* Lower z-index to avoid overlapping */
+}
+
+
+
+.hero::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(243, 156, 18, 0.2) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.hero-content {
+  max-width: 100%;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #1237f3, #e67e22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #000000;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: linear-gradient(90deg, #f39c12, #e67e22);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+.hero-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(243, 156, 18, 0.5);
+}
+
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 412px) {
+  .hero {
+    position: relative;
+    top: 65px; /* match navbar height */
+    height: calc(100vh - 65px); /* full screen minus navbar */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.2rem);
+    margin-bottom: 1rem;
+    max-width: 90%;
+    word-break: break-word;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    max-width: 95%;
+  }
+
+  .hero-cta {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+  }
+}

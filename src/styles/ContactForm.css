@@ -1,0 +1,106 @@
+.contact-section {
+  padding: 4rem 2rem;
+  padding-bottom: 350px; /* Prevent overlap with fixed footer */
+  background: #f9f9f9;
+  color: #000000;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+
+.contact-heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #f39c12;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form select {
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus {
+  border-color: #f39c12;
+  outline: none;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #f39c12, #e67e22);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(243, 156, 18, 0.3);
+}
+
+@media (max-width: 400px) {
+  .contact-section {
+    padding: 2rem 1rem;
+    padding-bottom: 200px; /* Reduced for mobile footer spacing */
+  }
+
+  .contact-heading {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 1.5rem;
+    gap: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  .contact-form label {
+    font-size: 0.95rem;
+  }
+
+  .contact-form input,
+  .contact-form select {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+    border-radius: 6px;
+  }
+
+  .submit-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+    border-radius: 20px;
+  }
+}
