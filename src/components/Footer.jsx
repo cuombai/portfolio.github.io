@@ -41,7 +41,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Godtek AI. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} El-ha-tek Solutions. All rights reserved.</p>
       </div>
 
       {/* Optional mobile menu toggle */}
