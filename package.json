@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://cuombai.github.io/portfolio.github.io",
+  "homepage": "https://godtek.net/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
